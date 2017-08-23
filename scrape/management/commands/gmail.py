@@ -6,16 +6,24 @@ from django.utils import timezone
 
 
 class Command(BaseCommand):
+    def add_arguments(self, parser):
+        # Positional arguments
+        parser.add_argument('from_email')
+        parser.add_argument('my_email')
+        parser.add_argument('my_pwd')
+
     def handle(self, *args, **options):
-        usr = "ismailiappusa@gmail.com"
-        pwd = "yaaliyaali"
+        # usr = "ismailiappusa@gmail.com"
+        # pwd = "yaaliyaali"
+        usr = options["my_email"]
+        pwd = options["my_pwd"]
 
         m = imaplib.IMAP4_SSL("imap.gmail.com")
         m.login(usr, pwd)
 
         m.select()
 
-        resp, items = m.search(None, '(FROM "swadhwania@gmail.com")')
+        resp, items = m.search(None, '(FROM "' + options["from_email"] + '")')
         items = items[0].split()[::-1]
 
         regional_links = [""] * 7
