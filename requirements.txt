@@ -1,0 +1,8 @@
+dj-database-url==0.4.1
+Django==1.9.7
+django-common-helpers==0.8.0
+django-cron==0.4.6
+gunicorn==19.6.0
+psycopg2==2.6.1
+requests==2.11.1
+whitenoise==3.2.1
