@@ -3,7 +3,7 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r"^southwest/", views.southwest, name='southwest'),
+    url(r"^southwestern/", views.southwestern, name='southwestern'),
     url(r"^central/", views.central, name='central'),
     url(r"^midwestern/", views.midwestern, name='midwestern'),
     url(r"^western/", views.western, name='western'),
