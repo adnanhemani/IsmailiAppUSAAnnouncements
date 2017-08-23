@@ -13,8 +13,6 @@ class Command(BaseCommand):
         parser.add_argument('my_pwd')
 
     def handle(self, *args, **options):
-        # usr = "ismailiappusa@gmail.com"
-        # pwd = "yaaliyaali"
         usr = options["my_email"]
         pwd = options["my_pwd"]
 
